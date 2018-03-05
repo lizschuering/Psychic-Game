@@ -1,0 +1,35 @@
+.background {
+    background-image: url(../images/hypnotize.png);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 20px;
+}
+
+.heading {
+    font-size: 50px;
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.sub-heading {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 50px;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.wins, .losses, .guess-left, .guess-so-far {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: 'Amatic SC', cursive;
+}
+
+.crystal-ball {
+    align-self: center;
+}
