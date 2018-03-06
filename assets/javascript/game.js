@@ -7,7 +7,6 @@ let guessLeft = 9;
 
 // Create a variable that stores a randomly generated letter from the array letterChoices. This is the computer's choice that the user has to guess.
 let computerChoice = letterChoices[Math.floor(Math.random() * letterChoices.length)];
-//console.log(computerChoice);
 
 // Create empty array to hold and display the user's letter choices
 let lettersGuessed = [];
@@ -16,11 +15,11 @@ let lettersGuessed = [];
 document.onkeyup = function(event) {
     //let userChoice = event.key;
     //let userGuess = userChoice.toLowerCase();
-    // Create a variable that stores the user's key press
+    // Create a single variable that stores the user's key press
     let userGuess = String.fromCharCode(event.which).toLowerCase();
 
     // Runs the game logic but only if the user selects a valid (ie letter) key
-    if ((userGuess === "a") || (userGuess === "b") || (userGuess === "c") || (userGuess === "d") || (userGuess === "e") || (userGuess === "f") || (userGuess === "g") || (userGuess === "h") || (userGuess === "i") || (userGuess === "j") || (userGuess === "k") || (userGuess === "l")  || (userGuess === "m") || (userGuess === "n") || (userGuess === "o")  || (userGuess === "p") || (userGuess === "q") || (userGuess === "r")  || (userGuess === "s") || (userGuess === "t") || (userGuess === "u")  || (userGuess === "v") || (userGuess === "w") || (userGuess === "x")  || (userGuess === "y") || (userGuess === "z")) {
+    if (letterChoices.indexOf(userGuess) !== -1) {
         // If user's guess matches the computer's random selection, the win count goes up by 1 and guessLeft goes back to 9
         if (userGuess === computerChoice) {
             wins++;
@@ -43,9 +42,9 @@ document.onkeyup = function(event) {
     }
 
     function resetGame() {
-        guessLeft = 9; //Reset the 
-        lettersGuessed = []; //
-        computerChoice = letterChoices[Math.floor(Math.random() * letterChoices.length)];
+        guessLeft = 9; //Reset the guesses left to 9
+        lettersGuessed = []; //Empty the variable that holds the letter guesses
+        computerChoice = letterChoices[Math.floor(Math.random() * letterChoices.length)]; //Generate a new random number
         console.log("New letter to guess: " + computerChoice); //Must log a new letter to the console so the user can keep guessing
         }
     }
