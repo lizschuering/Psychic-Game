@@ -19,7 +19,7 @@ document.onkeyup = function(event) {
     let userGuess = String.fromCharCode(event.which).toLowerCase();
 
     // Runs the game logic but only if the user selects a valid (ie letter) key
-    if (letterChoices.indexOf(userGuess) !== -1) {
+    if (letterChoices.indexOf(userGuess) !== -1 && lettersGuessed.indexOf(userGuess) === -1) {
         // If user's guess matches the computer's random selection, the win count goes up by 1 and guessLeft goes back to 9
         if (userGuess === computerChoice) {
             wins++;
